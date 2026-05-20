@@ -57,6 +57,8 @@ Goal: Detect and reduce ambiguity or missing decision points in the active featu
 
 Note: This clarification workflow is expected to run (and be completed) BEFORE invoking `__SPECKIT_COMMAND_PLAN__`. If the user explicitly states they are skipping clarification (e.g., exploratory spike), you may proceed, but must warn that downstream rework risk increases.
 
+When clarification answers affect implementation, architecture, task decomposition, testing strategy, or integration boundaries, ensure they are represented in `research.md` under `## Product / Architecture Q&A` during the next `/speckit.plan` or `/speckit.tasks` work for the feature. Capture only the concise question, final answer, and short rationale; do not include full transcripts or hidden chain-of-thought.
+
 Execution steps:
 
 1. Run `{SCRIPT}` from repo root **once** (combined `--json --paths-only` mode / `-Json -PathsOnly`). Parse minimal JSON payload fields:

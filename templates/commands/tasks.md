@@ -70,7 +70,10 @@ You **MUST** consider the user input before proceeding (if not empty).
    - Load spec.md and extract user stories with their priorities (P1, P2, P3, etc.)
    - If data-model.md exists: Extract entities and map to user stories
    - If contracts/ exists: Map interface contracts to user stories
-   - If research.md exists: Extract decisions for setup tasks
+   - If research.md exists: Extract formal decisions and `Product / Architecture Q&A` entries for setup tasks and implementation constraints
+   - Treat Q&A final answers as binding planning constraints unless contradicted by `spec.md` or `plan.md` or `constitution.md`
+   - If the `/speckit.tasks` discussion adds or changes an implementation-relevant decision, update `research.md` under `## Product / Architecture Q&A` before generating or finalizing `tasks.md`
+   - Capture only the concise question, final answer, and short rationale; do not include full transcripts or hidden chain-of-thought
    - Generate tasks organized by user story (see Task Generation Rules below)
    - Generate dependency graph showing user story completion order
    - Create parallel execution examples per user story

@@ -119,12 +119,38 @@ You **MUST** consider the user input before proceeding (if not empty).
      Task: "Find best practices for {tech} in {domain}"
    ```
 
-3. **Consolidate findings** in `research.md` using format:
+3. **Consolidate findings** in `research.md` using this format for formal decisions:
    - Decision: [what was chosen]
    - Rationale: [why chosen]
    - Alternatives considered: [what else evaluated]
 
-**Output**: research.md with all NEEDS CLARIFICATION resolved
+4. **Capture user-facing Q&A decisions** in `research.md` under a section named `## Product / Architecture Q&A`.
+   - Add an entry whenever the user asks a question, chooses between options, corrects scope, or provides a decision that affects planning or implementation during `/speckit.plan` discussion.
+   - If `research.md` already exists, append new Q&A entries or update existing conflicting entries rather than replacing the whole Q&A section.
+   - Use this format:
+
+     ```markdown
+     ### Q-[NNN]: [Short topic]
+
+     **Question**: [Concise version of the user's question]
+
+     **Final answer**: [The final decision or answer that should guide future work]
+
+     **Why**:
+     - [Short point explaining why this choice was made]
+     - [Short point, if useful]
+     - [Short point, if useful]
+
+     **Impacted decision(s)**: [Research IDs such as R-002, or "New decision"]
+     ```
+
+   - Do not include full conversation transcripts.
+   - Do not include hidden chain-of-thought.
+   - Capture only the final answer and a short rationale.
+   - Keep entries concise and implementation-relevant.
+   - If the Q&A changes an existing research decision, update both the formal decision and the Q&A entry so they do not conflict.
+
+**Output**: research.md with all NEEDS CLARIFICATION resolved and any implementation-relevant Q&A decisions captured
 
 ### Phase 1: Design & Contracts
 
